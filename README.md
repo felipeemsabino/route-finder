@@ -1,2 +1,3 @@
 # route-finder
-Ionic v2 app for Google Maps v3
+
+Simple app for search routes between two address using using Cordova, Ionic and Google Maps v3.
