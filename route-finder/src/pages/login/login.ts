@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
 import { NavController, MenuController } from 'ionic-angular';
+import { AuthService } from '../../providers/auth-service';
 import { Page1 } from '../page1/page1';
+
 
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html'
 })
 export class Login {
-
+  registerCredentials = {email: '', password: ''};
   private menu: MenuController = null;
-  private user: any = {'email': '', 'password': ''};
 
-  constructor(public navCtrl: NavController, public menuCtrl: MenuController) {
+  constructor(public navCtrl: NavController, private auth: AuthService, public menuCtrl: MenuController) {
     this.menu = menuCtrl;
     this.menu.swipeEnable(false);
   }
@@ -20,17 +21,33 @@ export class Login {
     this.menu.swipeEnable(true);
   }
 
-  /*
-  * Do the login using the user email and password.
-  */
-  doLogin () {
+  public login () {
+    //this.showLoading()
+    this.auth.login(this.registerCredentials).subscribe(
+      allowed => {
+        if (allowed) {
+          setTimeout(() => {
+          console.log("Success");
+          //this.loading.dismiss();
+          //this.nav.setRoot(HomePage)
+          this.navCtrl.setRoot(Page1);
 
-    //JSON.stringify(user)
-    // Call the auth service and do all stuff
-    console.log('login -> email = ' + this.user.email + ' password = ' + this.user.password);
-
-    // if auth is ok, then go to another page-login
-    this.navCtrl.setRoot(Page1);
+          });
+        } else {
+          console.log("Access Denied");
+        }
+      },
+      error => {
+        console.log("ERROR: " +error);
+      }
+    );
   }
 
+  showLoading() {
+
+  }
+
+  showError(text) {
+
+  }
 }

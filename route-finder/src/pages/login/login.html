@@ -1,15 +1,25 @@
 <ion-header>
   <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>Login</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Sign in</h3>
-  <form (ngSubmit)="doLogin()">
-    <input [(ngModel)]="user.email" name="email" placeholder="Email" required >
-    <input [(ngModel)]="user.password" name="password" placeholder="Password" type="password" required>
-    <button ion-button type="submit">Sign in</button>
-  </form>
+  <h3>Sign in to continue to RouteFinder</h3>
 
+  <form (ngSubmit)="login()">
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input type="text" name="email" [(ngModel)]="registerCredentials.email" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input type="text" name="password" [(ngModel)]="registerCredentials.password" ></ion-input>
+    </ion-item>
+
+    <button ion-button type="submit" block>Ok</button>
+  </form>
 </ion-content>
