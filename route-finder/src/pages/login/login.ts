@@ -9,7 +9,7 @@ import { Page1 } from '../page1/page1';
   templateUrl: 'login.html'
 })
 export class Login {
-  registerCredentials = {email: '', password: ''};
+  registerCredentials = {email: 'user@gmail.com', password: 'user'};
   private menu: MenuController = null;
 
   constructor(public navCtrl: NavController, private auth: AuthService, public menuCtrl: MenuController) {
