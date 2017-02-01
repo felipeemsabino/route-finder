@@ -28,8 +28,8 @@ export class AuthService {
         console.log("auth-service - login success");
 
         // At this point make a request to your backend to make a real check!
-        let access = (credentials.password === "pass" && credentials.email === "email");
-        this.currentUser = new User('felipeems87@gmail.com', 'felipe');
+        let access = (credentials.password === "user" && credentials.email === "user@gmail.com");
+        this.currentUser = new User('user@gmail.com', 'user');
 
         observer.next(access);
         observer.complete();
