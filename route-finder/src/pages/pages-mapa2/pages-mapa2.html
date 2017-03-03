@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Postos de Combustível</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div #map id="map"></div>
+  <div id="gas-stations-list">
+    <ion-list>
+      <ion-spinner name="bubbles"></ion-spinner>
+      <ion-item *ngFor="let gasStation of gasStationsList">
+        <img src="assets/imgs/marker_br.png" item-left>
+        <h2>{{gasStation.nome}}</h2>
+        <p>{{gasStation.endereco}}</p>
+        <button ion-button clear item-right>Sobre</button>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
