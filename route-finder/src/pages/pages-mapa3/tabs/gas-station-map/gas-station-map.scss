@@ -1,0 +1,20 @@
+.ios, .md {
+ page-gas-station-map {
+
+    ion-spinner * {
+      width: 28px;
+      height: 28px;
+      stroke: #444;
+      fill: #222;
+      margin: auto;
+      position: absolute;
+      text-align: center;
+    }
+
+    #map {
+      width: 100%;
+      height: 100%;
+    }
+
+  }
+}

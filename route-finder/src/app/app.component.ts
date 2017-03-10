@@ -6,6 +6,7 @@ import { Login } from '../pages/login/login';
 import { Page1 } from '../pages/page1/page1';
 import { Page2 } from '../pages/page2/page2';
 import { PagesMapa2Page } from '../pages/pages-mapa2/pages-mapa2';
+import { PagesMapa3Page } from '../pages/pages-mapa3/pages-mapa3';
 
 
 @Component({
@@ -25,6 +26,7 @@ export class MyApp {
     this.pages = [
       { title: 'Postos', component: Page1 },
       { title: 'Postos v.2', component: PagesMapa2Page },
+      { title: 'Postos v.3', component: PagesMapa3Page },
       { title: 'Promoções', component: Page2 },
       { title: 'Minha conta', component: Page2 },
       { title: 'Configurações', component: Page2 },
